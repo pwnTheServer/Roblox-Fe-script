@@ -1,0 +1,15 @@
+local FilteringEnabled=false
+started=false
+
+if FilteringEnabled==false then
+	started=false
+	local FDServer=script.FDServer:Clone()
+	FDServer.Parent=game:GetService("ServerScriptService")
+	FDServer.Disabled=false
+	started=true
+	for i,v in pairs(script.ReplicatedStorage:GetChildren()) do
+		v.Parent=game:GetService("ReplicatedStorage")
+	end
+	wait()
+	script.Parent=nil
+end
